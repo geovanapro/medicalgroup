@@ -48,29 +48,10 @@
       /* Você pode adicionar largura, margens ou outros estilos conforme necessário. */
     }
 
-    .content-overlay {
-      top: -1000;
-      left: 0;
-      width: 100%;
-      height: 90%;
-      background: rgb(255, 255, 255);
-      /* Cor de sobreposição */
-      color: white;
-    }
 
     .content {
       position: relative;
       z-index: 3;
-    }
-
-    .content-overlay2 {
-      top: -800px;
-      left: 0px;
-      width: 70%;
-      height: 1000%;
-      background: rgb(255, 255, 255);
-      /* Cor de sobreposição */
-      color: white;
     }
 
     .container1 {
@@ -78,72 +59,47 @@
       /* Centraliza horizontalmente */
     }
 
-    .content-overlay3 {
+
+    .container-fluid {
       top: -800px;
       left: 0px;
       width: 70%;
       height: 1000%;
-      background: rgb(255, 255, 255);
-      /* Cor de sobreposição */
-      color: white;
-    }
 
-    .container2 {
-      text-align: center;
-      /* Centraliza horizontalmente */
-    }
-
-    .container3 {
-      text-align: center;
-      /* Centraliza horizontalmente */
-    }
-
-    .content-overlay4 {
-      top: -800px;
-      left: 0px;
-      width: 70%;
-      height: 1000%;
-      background: rgb(255, 255, 255);
       /* Cor de sobreposição */
       color: white;
     }
 
     .imagem1 {
       display: flex;
+      margin:10px;
       /* Permite espaço entre as imagens */
-      margin-top: 100px;
+      /* margin-top: 100px; */
       /* Espaço entre as imagens */
     }
 
-    .imagem2 {
-      display: flex;
-      /* Permite espaço entre as imagens */
-      margin-top: 100px;
-      /* Espaço entre as imagens */
-    }
 
-    .imagem3 {
-      display: flex;
-      /* Permite espaço entre as imagens */
-      margin-top: 100px;
-      /* Espaço entre as imagens */
-    }
-
+    /* Adicione um estilo para tornar o mapa responsivo */
     #map-container2 {
-      width: 400px;
+      width: 100%;
       height: 400px;
-      margin: 20px auto;
       /* Ajuste conforme necessário */
+      margin: 20px auto;
       position: relative;
       border: 2px solid #ffffff;
-      /* Cor e espessura da borda */
     }
 
     #map {
       height: 100%;
-      width: 200%;
+      width: 100%;
+    }
 
-
+    .card-1 {
+      display: flex;
+      flex-direction: column;
+      background-color: red;
+      margin: 40px;
+      margin-left:10%;
     }
   </style>
   <meta charset="UTF-8">
@@ -153,8 +109,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <title>Tela inicial do usuário</title>
+</head>
+<header>
   <nav class="navbar navbar-expand-sm bg-info navbar-dark fixed-top">
-    <div class="container-fluid">
+    <div class="container-fluid ">
       <a class="navbar-brand" href="#">
         <img src="https://github.com/bgaby7/medicalg/blob/main/logotipo.png?raw=true" alt="MEDICAL GROUP"
           style="width:35px;" class="rounded-pill">
@@ -176,20 +134,17 @@
       </div>
     </div>
   </nav>
-</head>
-
+</header>
 <body>
   <!-- Carousel -->
   <div id="demo" class="carousel slide" data-bs-ride="carousel">
-
-    <!-- Indicators/dots -->
+ <!-- Indicators/dots -->
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
       <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
       <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
     </div>
-
-    <!-- The slideshow/carousel -->
+<!-- The slideshow/carousel -->
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="https://github.com/bgaby7/medicalg/blob/main/home/diversidade.jpg?raw=true" alt="Los Angeles"
@@ -216,8 +171,7 @@
         </div>
       </div>
     </div>
-
-    <!-- Left and right controls/icons -->
+     <!-- Left and right controls/icons -->
     <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
       <span class="carousel-control-prev-icon"></span>
     </button>
@@ -225,45 +179,36 @@
       <span class="carousel-control-next-icon"></span>
     </button>
   </div>
-
   <div class="container">
-    <div class="container1">
-      <div class="content-overlay2">
-        <img src="https://github.com/bgaby7/medicalg/blob/main/home/telafundo2.jpg?raw=true"
-          class="imagem-de-tela-cheia">
-        <div class="content">
-          <div style="display: flex; margin-top: 0 100px; color:rgba(0, 60, 255, 0.667)">
-            <div style=" white-space: nowrap; margin-top: 25px; margin-left: 450px;">
-              <h2>NOSSAS ÁREAS</h2>
+    <div class="container-fluid">
+      <div class="container-fluid">
+        <img src="https://github.com/bgaby7/medicalg/blob/main/home/telafundo2.jpg?raw=true" class="imagem-de-tela-cheia" style="z-index: -1;">
+        <div class="container">
+          <br>
+            <div style=" color:rgba(7, 50, 152, 0.683);   white-space: nowrap;  margin-top: 0 100px; margin-left: 0px; width: 100%; text-align: center; align-items: center;">
+            <h1>NOSSAS ÁREAS</h1>
+          </div>
+          <div style=" color:rgba(7, 50, 152, 0.683);  display: flex; flex-direction: row; text-align: center;">
+            <div class="card-1" style="background-color: transparent; border:0px;">
+              <img src="https://github.com/bgaby7/medicalg/blob/main/home/gastrenteologia.PNG?raw=true"
+                class="imagem1" />
+              <p>GASTRENTEOLOGIA</p>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div style="display: flex; text-align: center;">
-              <p><img src="https://github.com/bgaby7/medicalg/blob/main/home/gastrenteologia.PNG?raw=true"
-                  class="imagem1" style="margin-left: -570px;"></p>
-              <p><img src="https://github.com/bgaby7/medicalg/blob/main/home/dentista.PNG?raw=true" class="imagem2"
-                  style="margin-left: -190px;"></p>
-              <p><img src="https://github.com/bgaby7/medicalg/blob/main/home/medicogeral.PNG?raw=true" class="imagem3"
-                  style="margin-left: 150px;"></p>
-              <p style="margin-left: -860px; margin-top: 270px;">GASTRENTEOLOGIA</p>
-              <p style="margin-left: 270px; margin-right: -100px; margin-top: 270px;">DENTISTA</p>
-              <p style="margin-left: 350px; margin-right: -200px; margin-top: 270px;">CLÍNICO GERAL</p>
+            <div class="card-1" style=" color:rgba(7, 50, 152, 0.683); background-color: transparent; border:0px;">
+              <img src="https://github.com/bgaby7/medicalg/blob/main/home/dentista.PNG?raw=true"
+                class="imagem1" />
+              <p>DENTISTA</p>
+            </div>
+            <div class="card-1" style="color:rgba(7, 50, 152, 0.683); background-color: transparent; border:0px;">
+              <img src="https://github.com/bgaby7/medicalg/blob/main/home/medicogeral.PNG?raw=true"
+                class="imagem1" />
+              <p>CLÍNICO GERAL</p>
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
-  <div class="content-overlay">
+  <div class="container-fluid">
     <img src="https://github.com/bgaby7/medicalg/blob/main/home/fundo.png?raw=true" class="imagem-de-tela-cheia">
     <div class="content">
       <br>
@@ -292,7 +237,6 @@
         <h5>VEJA:</h5>
         </p>
       </div>
-
       <div class="btn-group-vertical" style="margin-left: 440px; margin-top: -220px;">
         <p><button type="button" class="btn btn-outline-light text-white" data-bs-toggle="modal"
             data-bs-target="#myModal">AGENDE</button></p>
@@ -301,27 +245,27 @@
           <a href="/planos"></a></button>
         <br>
         <br>
-        <p><button type="button" class="btn btn-outline-light text-white" onclick="window.location.href='/exames'">EXAMES
-          <a href="/exames"></a></button>
+        <p><button type="button" class="btn btn-outline-light text-white"
+            onclick="window.location.href='/exames'">EXAMES
+            <a href="/exames"></a></button>
       </div>
     </div>
   </div>
-
-
-
-
-  <br>
-  <br>
-  <div style="margin-left: 90px; margin-top: 135px;">
-    <img src="https://github.com/bgaby7/medicalg/blob/main/home/caras.png?raw=true">
-  </div>
-  <div style="color:black; margin-left: 650px; margin-top: -400px;">
-    <p>
-    <h1 bg-info>SOBRE NÓS</h1>
-    </p>
-    <p>Criada pelo médico Fernando Strada em 2020, na região da Paulista em São Paulo. Esta clínica médica que
-      atua no ramo da saúde, busca atender a todos os requitos de seus pacientes visando a excelencia e satisfação em
-      todas as consultas realizadas.</p>
+  <div class="container-fluid">
+    <img src="https://github.com/bgaby7/medicalg/blob/main/home/telafundo2.jpg?raw=true" class="imagem-de-tela-cheia">
+    <div class="content">
+      <div style="margin-left: 90px; margin-top: 195px;">
+        <img src="https://github.com/bgaby7/medicalg/blob/main/home/caras.png?raw=true">
+      </div>
+      <div style="color:black; margin-left: 650px; margin-top: -400px;">
+        <p>
+        <h1 bg-info>SOBRE NÓS</h1>
+        </p>
+        <p>Criada pelo médico Fernando Strada em 2020, na região da Paulista em São Paulo. Esta clínica médica que
+          atua no ramo da saúde, busca atender a todos os requitos de seus pacientes visando a excelencia e satisfação
+          em todas as consultas realizadas.</p>
+      </div>
+    </div>
   </div>
   <!-- The Modal -->
   <div class="modal" id="myModal">
@@ -353,9 +297,11 @@
   <br>
   <br>
   <br>
+  <br>
+  <br>
   <div>
-    <div class="container2">
-      <div class="content-overlay3">
+    <div class="container-fluid">
+      <div class="container-fluid">
         <img src="https://github.com/bgaby7/medicalg/blob/main/home/fundo.png?raw=true" class="imagem-de-tela-cheia">
         <br>
         <div class="content"
@@ -384,8 +330,10 @@
   <br>
   <div>
     <br>
-    <div class="container3">
-      <div class="content-overlay4">
+    <div class="container-fluid">
+      <div class="container-fluid">
+        <img src="https://github.com/bgaby7/medicalg/blob/main/home/telafundo2.jpg?raw=true"
+          class="imagem-de-tela-cheia">
         <div class="content"
           style="display: flex; margin-left: 300px; margin-top: 0 100px; color:rgba(0, 42, 255, 0.493)">
           <div style="margin-top: 80px;">
@@ -404,20 +352,20 @@
           <div style=" margin-left: -720px; margin-top: 200px;">
             <img src="https://github.com/bgaby7/medicalg/blob/main/home/redes.png?raw=true" style="width: 360px;">
           </div>
-
         </div>
       </div>
     </div>
   </div>
-  <br>
-  <br>
+  </div></div>
   </div>
 </body>
-<footer>
-  <p>&copy; 2023 Medical Group - Todos os direitos reservados.</p>
-  <p>Entre em contato: hospital.medicalup@gmail.com</p>
-  <a href="#">Política de Privacidade</a>
-  <a href="#">Termos de Serviço</a>
-</footer>
+<div class="content">
+  <footer style="height: 600px;">
+    <p>&copy; 2023 Medical Group - Todos os direitos reservados.</p>
+    <p>Entre em contato: hospital.medicalup@gmail.com</p>
+    <a href="#">Política de Privacidade</a>
+    <a href="#">Termos de Serviço</a>
+  </footer>
+</div>
 
 </html>
