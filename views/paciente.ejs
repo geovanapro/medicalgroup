@@ -152,95 +152,12 @@
     <br>
     </div>
 
-    <br>
-    <div class="container">
+<body>
+    <iframe src="https://docs.google.com/spreadsheets/d/1aaHb5uknEPZVs1EfySsEY5D9tOJ8SEe-x0W9Xx5zUc0/edit?pli=1#gid=643682174" height="750px" width="750px">
+    </iframe>
+</body>
 
-        <div id='calendar'></div>
-        <div class="buttons">
-            <input type="text" id="eventInput" placeholder="Novo evento">
-            <button id="addEvent">Adicionar Evento</button>
-            <button id="removeEvent">Remover Evento</button>
-        </div>
-
-        <script>
-            var events = [];
-
-            $(document).ready(function () {
-                var calendar = $('#calendar').fullCalendar({
-                    defaultView: 'month',
-                    editable: true,
-                    events: events,
-                    eventRender: function (event, element) {
-                        element.append('<span class="closeon">X</span>');
-                        element.find(".closeon").click(function () {
-                            removeEvent(event);
-                        });
-                    }
-                });
-
-                $('#addEvent').click(function () {
-                    var eventText = $('#eventInput').val();
-                    if (eventText) {
-                        var newEvent = {
-                            title: eventText,
-                            start: moment()
-                        };
-                        addEvent(newEvent);
-                        $('#eventInput').val('');
-                    }
-                });
-
-                $('#removeEvent').click(function () {
-                    var selectedEvent = $('#calendar').fullCalendar('clientEvents', function (event) {
-                        return event.selected;
-                    })[0];
-                    if (selectedEvent) {
-                        removeEvent(selectedEvent);
-                    }
-                });
-
-                calendar.fullCalendar('option', 'selectable', true);
-                calendar.fullCalendar('select', function (start, end) {
-                    var title = prompt('Nome do evento:');
-                    var eventData;
-                    if (title) {
-                        eventData = {
-                            title: title,
-                            start: start,
-                            end: end,
-                            selected: true
-                        };
-                        addEvent(eventData);
-                        $('#calendar').fullCalendar('unselect');
-                    }
-                });
-
-                calendar.fullCalendar('eventDrop', function (event, delta, revertFunc) {
-                    event.selected = true;
-                    $('#calendar').fullCalendar('updateEvent', event);
-                });
-
-                calendar.fullCalendar('eventResize', function (event, delta, revertFunc) {
-                    event.selected = true;
-                    $('#calendar').fullCalendar('updateEvent', event);
-                });
-
-                function addEvent(event) {
-                    events.push(event);
-                    $('#calendar').fullCalendar('renderEvent', event);
-                }
-
-                function removeEvent(event) {
-                    events = events.filter(function (e) {
-                        return e !== event;
-                    });
-                    $('#calendar').fullCalendar('removeEvents', event._id);
-                }
-            });
-
-
-        </script>
-    </div>
+<div class="container">
     <div class="container" style="width: 600px; height: 500px; margin-top: -350px; margin-left: 600px;">
         <div class="d-grid">
             <button type="button" class="btn btn-info btn-block" data-bs-toggle="modal" data-bs-target="#myModal">
@@ -299,6 +216,7 @@
                 <a href="/exames"></a></button>
         </div>
     </div>
+</div>
 </body>
 <footer>
     <p>&copy; 2023 Medical Group - Todos os direitos reservados.</p>
